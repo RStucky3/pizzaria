@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 11 mei 2022 om 12:52
+-- Gegenereerd op: 18 mei 2022 om 10:09
 -- Serverversie: 10.4.22-MariaDB
 -- PHP-versie: 7.4.27
 
@@ -71,10 +71,10 @@ INSERT INTO `doctrine_migration_versions` (`version`, `executed_at`, `execution_
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `order`
+-- Tabelstructuur voor tabel `orderpizza`
 --
 
-CREATE TABLE `order` (
+CREATE TABLE `orderpizza` (
   `id` int(11) NOT NULL,
   `fname` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `sname` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -84,6 +84,18 @@ CREATE TABLE `order` (
   `status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `pizza_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `orderpizza`
+--
+
+INSERT INTO `orderpizza` (`id`, `fname`, `sname`, `adress`, `city`, `zipcode`, `status`, `pizza_id`) VALUES
+(1, 'Ruben', 'Stucky', 'asd', 'asd', 'asd', 'ads', 8),
+(2, 'Ruben', 'Stucky', 'qwe', 'wqe', 'qwe', 'qew', 7),
+(3, 'Ruben', 'Stucky', 'qwe', 'wqe', 'qwe', 'qew', 7),
+(4, 'Ruben', 'Stucky', 'Colombiahof 34', 'Delft', '2622ac', 'Large', 7),
+(5, 'Test', 'test', 'test', 'test', 'test', '20', 7),
+(6, 'Ruben', 'Stucky', 'appellaan', 'ih', 'uhefoiub', '20', 7);
 
 -- --------------------------------------------------------
 
@@ -136,9 +148,9 @@ ALTER TABLE `doctrine_migration_versions`
   ADD PRIMARY KEY (`version`);
 
 --
--- Indexen voor tabel `order`
+-- Indexen voor tabel `orderpizza`
 --
-ALTER TABLE `order`
+ALTER TABLE `orderpizza`
   ADD PRIMARY KEY (`id`),
   ADD KEY `IDX_F5299398D41D1D42` (`pizza_id`);
 
@@ -167,10 +179,10 @@ ALTER TABLE `category`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT voor een tabel `order`
+-- AUTO_INCREMENT voor een tabel `orderpizza`
 --
-ALTER TABLE `order`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `orderpizza`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT voor een tabel `pizza`
@@ -189,9 +201,9 @@ ALTER TABLE `size`
 --
 
 --
--- Beperkingen voor tabel `order`
+-- Beperkingen voor tabel `orderpizza`
 --
-ALTER TABLE `order`
+ALTER TABLE `orderpizza`
   ADD CONSTRAINT `FK_F5299398D41D1D42` FOREIGN KEY (`pizza_id`) REFERENCES `pizza` (`id`);
 
 --

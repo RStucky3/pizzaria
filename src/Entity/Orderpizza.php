@@ -2,14 +2,14 @@
 
 namespace App\Entity;
 
-use App\Repository\OrderRepository;
+use App\Repository\OrderPizzaRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=OrderRepository::class)
- * @ORM\Table(name="`order`")
+ * @ORM\Entity(repositoryClass=OrderPizzaRepository::class)
+ * @ORM\Table(name="`orderpizza`")
  */
-class Order
+class Orderpizza
 {
     /**
      * @ORM\Id

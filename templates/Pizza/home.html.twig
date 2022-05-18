@@ -18,8 +18,8 @@
 
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
-            <h1 class="display-4" style="color:red"><b>Pizzeria MK</b></h1>
-            <p class="lead" style="color:#FFFFFF"><b>The best bang for the buck.</b></p>
+            <br><br><br>
+            <h1 class="display-4" style="color:white"><b>Pizzeria Ruben</b></h1>
         </div>
     </div>
 
@@ -29,75 +29,17 @@
                 <a class="nav-link active text-white bg-dark" aria-current="page" href="/">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white bg-dark" href="menu">Pizza's</a>
+                <a class="nav-link text-white bg-dark" href="/categories">Pizza's</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white bg-dark" href="contact">Contact</a>
+                <a class="nav-link text-white bg-dark" href="/contact">Contact</a>
             </li>
         </ul>
 
         <br>
         <br>
         <!-- Slideshow container -->
-        <div class="slideshow-container">
 
-            <!-- Full-width images with number and caption text -->
-            <div class="mySlides fade">
-                <div class="">1 / 3</div>
-                <img src="img/carousel1.jpg" style="width:100%">
-            </div>
-
-            <div class="mySlides fade">
-                <div class=>2 / 3</div>
-                <img src="img/caro2.jpg" style="width:100%">
-            </div>
-
-            <div class="mySlides fade">
-                <div class=>3 / 3</div>
-                <img src="img/caro3.jpg" style="width:100%">
-            </div>
-
-            <div class="mySlides fade">
-                <div class=>4 / 4</div>
-                <img src="img/caro4.jpg" style="width:100%">
-            </div>
-
-
-            <!-- Next and previous buttons -->
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
-        </div>
-        <br>
-
-        <!-- The dots/circles -->
-        <div style="text-align:center">
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
-            <span class="dot" onclick="currentSlide(4)"></span>
-        </div>
-
-        <script>
-            let slideIndex = 0;
-            showSlides();
-
-            function showSlides() {
-                let i;
-                let slides = document.getElementsByClassName("mySlides");
-                let dots = document.getElementsByClassName("dot");
-                for (i = 0; i < slides.length; i++) {
-                    slides[i].style.display = "none";
-                }
-                slideIndex++;
-                if (slideIndex > slides.length) {slideIndex = 1}
-                for (i = 0; i < dots.length; i++) {
-                    dots[i].className = dots[i].className.replace(" active", "");
-                }
-                slides[slideIndex-1].style.display = "block";
-                dots[slideIndex-1].className += " active";
-                setTimeout(showSlides, 2000); // Change image every 2 seconds
-            }
-        </script>
 
 
     <div class="row gy-3">
@@ -108,7 +50,7 @@
                     <div class="card-body">
                         <h5 class="card-title">{{ value }}</h5>
                         <p class="card-text">{{ value }}</p>
-                        <a href="menu" class="btn btn-text-white bg-dark">Take me to the menu!</a>
+                        <a href="/categories/{{ loop.index }}" class="btn btn-text-white bg-dark">See all</a>
                     </div>
                 </div>
             </div>
@@ -116,65 +58,6 @@
     </div>
 
     <br>
-        <footer class="container-fluid bg-grey py-5">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="row">
-                            <div class="col-md-6 ">
-                                <div class="logo-part">
-                                    <img src="img/logo.png" class="w-50 logo-footer" >
-                                    <p>Roode Steen 12, 1621 CV Hoorn</p>
-                                </div>
-                            </div>
-                            <div class="col-md-6 px-4">
-                                <h6> About Company</h6>
-                                <p>Pizzaria MK started as 1 kid with a dream of selling the worlds most delightful pizza's.</p>
-                                <a href="#" class="btn-footer"> More Info </a><br>
-                                <a href="#" class="btn-footer"> Contact Us</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="row">
-                            <div class="col-md-6 px-4">
-                                <h6> Help us</h6>
-                                <div class="row ">
-                                    <div class="col-md-6">
-                                        <ul>
-                                            <li> <a href="#"> Home</a> </li>
-                                            <li> <a href="#"> About</a> </li>
-                                            <li> <a href="#"> Help</a> </li>
-                                            <li> <a href="#"> Contact</a> </li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-6 px-4">
-                                        <ul>
-                                            <li> <a href="#"> Fax</a> </li>
-                                            <li> <a href="#"> Terms</a> </li>
-                                            <li> <a href="#"> Policy</a> </li>
-                                            <li> <a href="#"> Refunds</a> </li>
-                                            <li> <a href="#"> Paypal</a> </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 ">
-                                <h6> Newsletter</h6>
-                                <div class="social">
-                                    <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                                    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                                </div>
-                                <form class="form-footer my-3">
-                                    <input type="text"  placeholder="search here...." name="search">
-                                    <input type="button" value="Go" >
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
 
 
     </div>

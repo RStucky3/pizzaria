@@ -2,30 +2,30 @@
 
 namespace App\Repository;
 
-use App\Entity\Order;
+use App\Entity\Orderpizza;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\OptimisticLockException;
 use Doctrine\ORM\ORMException;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @method Order|null find($id, $lockMode = null, $lockVersion = null)
- * @method Order|null findOneBy(array $criteria, array $orderBy = null)
- * @method Order[]    findAll()
- * @method Order[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Orderpizza|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Orderpizza|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Orderpizza[]    findAll()
+ * @method Orderpizza[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class OrderRepository extends ServiceEntityRepository
+class OrderPizzaRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Order::class);
+        parent::__construct($registry, Orderpizza::class);
     }
 
     /**
      * @throws ORMException
      * @throws OptimisticLockException
      */
-    public function add(Order $entity, bool $flush = true): void
+    public function add(Orderpizza $entity, bool $flush = true): void
     {
         $this->_em->persist($entity);
         if ($flush) {
@@ -37,7 +37,7 @@ class OrderRepository extends ServiceEntityRepository
      * @throws ORMException
      * @throws OptimisticLockException
      */
-    public function remove(Order $entity, bool $flush = true): void
+    public function remove(Orderpizza $entity, bool $flush = true): void
     {
         $this->_em->remove($entity);
         if ($flush) {
@@ -46,7 +46,7 @@ class OrderRepository extends ServiceEntityRepository
     }
 
     // /**
-    //  * @return Order[] Returns an array of Order objects
+    //  * @return Orderpizza[] Returns an array of Orderpizza objects
     //  */
     /*
     public function findByExampleField($value)
@@ -63,7 +63,7 @@ class OrderRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?Order
+    public function findOneBySomeField($value): ?Orderpizza
     {
         return $this->createQueryBuilder('o')
             ->andWhere('o.exampleField = :val')

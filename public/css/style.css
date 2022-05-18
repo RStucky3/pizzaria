@@ -195,6 +195,10 @@ body {
     padding-top: 85px;
 }
 
+form{
+    color: red;
+}
+
 h1 {
     font-family: 'Poppins', sans-serif, 'arial';
     font-weight: 600;

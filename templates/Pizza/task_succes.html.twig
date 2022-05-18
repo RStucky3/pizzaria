@@ -1,0 +1,51 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+    {#<h1>Pizzaria MK</h1>#}
+    {#{%  for value in pizzas %}#}
+    {#<li>{{ value }}</li>#}
+    {#{% endfor %}#}
+    {#<p>{{ name }}</p>#}
+
+    <style>.jumbotron{
+            background-image: url("../img/banner.jpg");
+            height: 250px;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    </style>
+
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <br><br><br>
+            <h1 class="display-4" style="color:White"><b>Pizzeria Ruben</b></h1>
+        </div>
+    </div>
+
+    <div class="container">
+        <ul class="nav">
+            <li class="nav-item">
+                <a class="nav-link active text-white bg-dark" aria-current="page" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white bg-dark" href="/categories">Pizza's</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white bg-dark" href="/contact">Contact</a>
+            </li>
+        </ul>
+
+        <br>
+        <div>
+            <h1>Uw bestelling is geplaatst</h1>
+        </div>
+
+    </div>
+
+
+
+
+
+
+{% endblock%}

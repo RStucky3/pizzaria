@@ -30,7 +30,7 @@ class Pizza
     private $image;
 
     /**
-     * @ORM\OneToMany(targetEntity=Order::class, mappedBy="pizza")
+     * @ORM\OneToMany(targetEntity=Orderpizza::class, mappedBy="pizza")
      */
     private $orders;
 
@@ -40,7 +40,7 @@ class Pizza
     private $sizes;
 
     /**
-     * @ORM\ManyToOne(targetEntity=category::class, inversedBy="pizzas")
+     * @ORM\ManyToOne(targetEntity=Category::class, inversedBy="pizzas")
      */
     private $category;
 
@@ -81,14 +81,14 @@ class Pizza
     }
 
     /**
-     * @return Collection<int, Order>
+     * @return Collection<int, Orderpizza>
      */
     public function getOrders(): Collection
     {
         return $this->orders;
     }
 
-    public function addOrder(Order $order): self
+    public function addOrder(Orderpizza $order): self
     {
         if (!$this->orders->contains($order)) {
             $this->orders[] = $order;
@@ -98,7 +98,7 @@ class Pizza
         return $this;
     }
 
-    public function removeOrder(Order $order): self
+    public function removeOrder(Orderpizza $order): self
     {
         if ($this->orders->removeElement($order)) {
             // set the owning side to null (unless already changed)

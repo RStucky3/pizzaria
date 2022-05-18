@@ -1,10 +1,12 @@
 {% extends "base.html.twig" %}
-{% block title %} menu {% endblock %}
 
 {% block body %}
 
-<body>
-
+{#<h1>Pizzaria MK</h1>#}
+{#{%  for value in pizzas %}#}
+{#<li>{{ value }}</li>#}
+{#{% endfor %}#}
+{#<p>{{ name }}</p>#}
 
 <style>.jumbotron{
         background-image: url("../img/banner.jpg");
@@ -17,7 +19,7 @@
 <div class="jumbotron jumbotron-fluid">
     <div class="container">
         <br><br><br>
-        <h1 class="display-4" style="color:#FFFFFF">Pizzeria Ruben</h1>
+        <h1 class="display-4" style="color:White"><b>Pizzeria Ruben</b></h1>
     </div>
 </div>
 
@@ -33,23 +35,19 @@
             <a class="nav-link text-white bg-dark" href="/contact">Contact</a>
         </li>
     </ul>
-</div>
-<center>
-<div class="row gy-3">
-    {%  for choice in pizzas %}
-        <div class="col-3">
-            <div class="card text-white bg-dark" style="width: 18rem; height: 18rem">
-                <img src="/img/{{ choice.image }}" class="card-img-top" alt="{{ choice.name }}">
-                <div class="card-body">
-                    <h5 class="card-title">{{ choice.name }}</h5>
-                    <a href="/orderpizza/{{ choice.id }}" class="btn btn-text-white bg-dark">Order</a>
-                </div>
-            </div>
-        </div>
-    {% endfor %}
-</div>
-</center>
-</body>
-</html>
 
-{% endblock %}
+    <br>
+    <div>
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        {{ form_end(form) }}
+    </div>
+
+</div>
+
+
+
+
+
+
+{% endblock%}
